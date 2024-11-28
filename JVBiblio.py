@@ -1,7 +1,7 @@
-#Jonathan Varghese 
-#Bibliocommons take home assignment
+# Jonathan Varghese 
+# Bibliocommons take home assignment
 
-#imported
+# Import modules from Selenium for browser automation and import Faker for generating test data
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -10,8 +10,10 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from faker import Faker
 
+# Create an instance of Faker to generate random user data for form inputs
 fake = Faker()
 
+# Using Faker, generate random first name, last name, and postal code
 first_name = fake.first_name()
 last_name = fake.last_name()
 postal_code = fake.postcode()
