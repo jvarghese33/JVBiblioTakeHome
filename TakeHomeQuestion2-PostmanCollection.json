@@ -1,0 +1,91 @@
+{
+	"info": {
+		"_postman_id": "89b9f612-7c46-472a-8d5b-13948ae0963f",
+		"name": "Take home assignment for Jonathan Varghese",
+		"description": "After creating my account and getting an API key, I am able to print both the temperature in Toronto in celsius and the status 200 from a successful API response.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40053767",
+		"_collection_link": "https://testers-3805.postman.co/workspace/Team-Workspace~b8588ab4-fd91-49e8-8a2e-8e897fcede77/collection/40053767-89b9f612-7c46-472a-8d5b-13948ae0963f?action=share&source=collection_link&creator=40053767"
+	},
+	"item": [
+		{
+			"name": "TakeHomeJV",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.sendRequest(\"https://api.openweathermap.org/data/2.5/weather?q=Toronto&appid=8b9b36a60beaee02cf9f49cff9cc7da3&units=metric\", function (err, res) {",
+							"    if (!err) {",
+							"        console.log(\"Status Code:\", res.code);",
+							"        console.log(\"Temperature:\", res.json().main.temp);",
+							"    }",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "8b9b36a60beaee02cf9f49cff9cc7da3",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "appid",
+							"type": "string"
+						},
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.openweathermap.org/data/2.5/weather?q=Toronto&units=metric",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "Toronto"
+						},
+						{
+							"key": "units",
+							"value": "metric"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
