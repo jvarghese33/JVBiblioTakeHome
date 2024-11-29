@@ -72,6 +72,7 @@ continue_button.click()
 finish_button = driver.find_element(By.ID, "finish")
 finish_button.click()
 
-# Find the checkout container found by the ID, check for the success text below and assert that the text you should see appears. Add a line to send an error message if not found
+# Find the checkout container found by the ID, check for the success text below 
+# Assert that the expected text appears, add error message if not
 successful_message = driver.find_element(By.ID, "checkout_complete_container")
 assert "Your order has been dispatched, and will arrive just as fast as the pony can get there!" in successful_message.text, "Success message not found!"
