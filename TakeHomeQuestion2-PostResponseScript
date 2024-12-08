@@ -1,0 +1,7 @@
+pm.sendRequest("https://api.openweathermap.org/data/2.5/weather?q=Toronto&appid=8b9b36a60beaee02cf9f49cff9cc7da3&units=metric", function (err, res) {
+    if (!err) {
+        console.log("Status Code:", res.code);
+        console.log("Temperature:", res.json().main.temp);
+        console.log("Location", res.json().name);
+    }
+});
